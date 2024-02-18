@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmins:th="http://www.thymleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Datos del nuevo Individuo</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <h1>Datos del nuevo Individuo </h1>
+        <a th:href="@{ / }"> Devolver </a>
+        <br/>
+        <form th:action="@{/salvar}" method="post" th:object="${individuo}">
+            <!-- <input type="hidden" name ="id_individuo" th:field="{id_individuo}"-->
+             <label for="nombre">usuario: </label>
+            <input type="text" name="usuario" th:field="*{usuario}"/>
+            </br>
+            <label for="correo">correo: </label>
+            <input type="text" name="correo" th:field="*{correo}"/>
+            </br>
+             <label for="contraseña">contraseña </label>
+            <input type="text" name="contrasena" th:field="*{contrasena}"/>
+            <br/>
+            <input type="submit" name="salvar" value="Salvar"/>
+        </form>
+    </body>
+</html>
